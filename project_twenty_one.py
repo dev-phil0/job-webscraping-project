@@ -1,7 +1,8 @@
 from bs4 import BeautifulSoup
 import requests
 user = input("What job would you want? ")
-url = f"https://ca.indeed.com/jobs?q={user}&l=Cambridge,%20ON&vjk=33efd0c38300448e&advn=4811491706743809"
+location = input("What area would you like your job to be? (Canadian Locations only) ")
+url = f"https://ca.indeed.com/jobs?q={user}&l={location},%20ON&vjk=33efd0c38300448e&advn=4811491706743809"
 get = requests.get(url).text
 soup = BeautifulSoup(get,"html.parser")
 
